@@ -1,0 +1,395 @@
+:root {
+  --page: #f7f1e8;
+  --surface: #fffaf2;
+  --card: #fffdf8;
+  --text: #1c1714;
+  --muted: #6e6259;
+  --soft: #988b81;
+  --line: #d9cabc;
+  --accent: #c9553c;
+  --accent-dark: #a43f2b;
+  --font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --container: 1160px;
+  --page-pad: 20px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --speed: 160ms ease;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--page);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.6;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(100% - calc(var(--page-pad) * 2), var(--container));
+  margin-inline: auto;
+}
+
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 20;
+  transform: translateY(-150%);
+  background: var(--text);
+  color: #fff;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 700;
+  transition: transform var(--speed);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.site-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+
+.header-inner {
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+  padding-block: var(--space-10);
+}
+
+.artist-intro {
+  max-width: 720px;
+}
+
+.studio-name,
+.section-label {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.artist-intro h1 {
+  margin-top: var(--space-3);
+  font-size: clamp(36px, 5vw, 56px);
+  line-height: 1.04;
+  font-weight: 800;
+  letter-spacing: -0.055em;
+}
+
+.artist-bio {
+  max-width: 640px;
+  margin-top: var(--space-4);
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.header-link,
+.commission-button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--text);
+  background: var(--text);
+  color: #fff;
+  padding-inline: 20px;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1;
+  white-space: nowrap;
+  transition:
+    background var(--speed),
+    border-color var(--speed),
+    color var(--speed);
+}
+
+.header-link:hover,
+.commission-button:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.gallery-section {
+  padding-block: var(--space-16) var(--space-20);
+}
+
+.section-heading {
+  display: grid;
+  gap: var(--space-5);
+  margin-bottom: var(--space-10);
+}
+
+.section-heading h2 {
+  margin-top: var(--space-2);
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.045em;
+}
+
+.section-heading > p {
+  max-width: 520px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.section-heading span {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.gallery-error {
+  margin-bottom: var(--space-8);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  padding: var(--space-6);
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.gallery-error strong {
+  display: block;
+  margin-bottom: var(--space-2);
+  color: var(--text);
+  font-size: 16px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+}
+
+.artwork-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: var(--space-3);
+}
+
+.artwork-card:hover {
+  border-color: var(--accent);
+}
+
+.card-image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: #eadccc;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-image-placeholder,
+.card-image-fallback {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: #eadccc;
+  color: var(--soft);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.card-body {
+  padding: var(--space-4) var(--space-2) var(--space-2);
+}
+
+.card-title {
+  color: var(--text);
+  font-size: 18px;
+  line-height: 1.25;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+.card-caption {
+  margin-top: var(--space-2);
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.commission-section {
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.commission-inner {
+  min-height: 320px;
+  display: grid;
+  align-items: center;
+  gap: var(--space-8);
+  padding-block: var(--space-16);
+}
+
+.commission-content {
+  max-width: 680px;
+}
+
+.commission-content h2 {
+  margin-top: var(--space-3);
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.045em;
+}
+
+.commission-content p {
+  max-width: 600px;
+  margin-top: var(--space-4);
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.site-footer {
+  background: var(--page);
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.footer-inner {
+  min-height: 76px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --page-pad: 28px;
+  }
+
+  .section-heading {
+    grid-template-columns: minmax(0, 1fr) 420px;
+    align-items: end;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .commission-inner {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .footer-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --page-pad: 36px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .header-inner {
+    min-height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-block: var(--space-10);
+  }
+
+  .header-link,
+  .commission-button {
+    width: 100%;
+  }
+
+  .artist-intro h1 {
+    font-size: clamp(32px, 10vw, 42px);
+  }
+
+  .artist-bio {
+    font-size: 15px;
+  }
+
+  .gallery-section {
+    padding-block: var(--space-12) var(--space-16);
+  }
+
+  .commission-inner {
+    min-height: auto;
+    padding-block: var(--space-12);
+  }
+}
+
+@media (max-width: 420px) {
+  :root {
+    --page-pad: 16px;
+  }
+
+  .gallery-grid {
+    gap: var(--space-6);
+  }
+
+  .artwork-card {
+    padding: var(--space-2);
+  }
+}

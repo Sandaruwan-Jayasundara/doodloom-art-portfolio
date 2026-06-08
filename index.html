@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Doodloom by Mara Velline</title>
+
+    <meta
+      name="description"
+      content="Doodloom is a single-page illustration portfolio by Mara Velline with selected artwork and commission contact by email."
+    />
+    <meta name="author" content="Mara Velline" />
+
+    <link rel="stylesheet" href="styles/main.css" />
+    <script src="scripts/gallery.js" defer></script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#gallery">Skip to gallery</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="artist-intro">
+          <p class="studio-name">Crayonworks Studio</p>
+          <h1>Mara Velline</h1>
+          <p class="artist-bio">
+            Illustrator creating soft, playful artwork for stories, characters,
+            and small creative projects.
+          </p>
+        </div>
+
+        <a
+          class="header-link"
+          href="mailto:hello@doodloom.art?subject=Commission%20request%20via%20Doodloom"
+        >
+          Commission request
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <section
+        id="gallery"
+        class="gallery-section"
+        aria-labelledby="gallery-heading"
+      >
+        <div class="container section-heading">
+          <div>
+            <p class="section-label">Artwork</p>
+            <h2 id="gallery-heading">Doodloom Gallery</h2>
+          </div>
+        </div>
+
+        <div
+          id="gallery-error"
+          class="gallery-error container"
+          role="alert"
+          aria-live="assertive"
+          hidden
+        ></div>
+
+        <div
+          id="gallery-grid"
+          class="gallery-grid container"
+          role="list"
+          aria-label="Artwork gallery"
+        ></div>
+      </section>
+
+      <section class="commission-section" aria-labelledby="commission-heading">
+        <div class="container commission-inner">
+          <div class="commission-content">
+            <p class="section-label">Commissions</p>
+            <h2 id="commission-heading">
+              Interested in a custom illustration?
+            </h2>
+            <p>
+              Send Mara a short email with your idea, usage, deadline, and any
+              visual references. Your email client will open with the subject
+              line already filled in.
+            </p>
+          </div>
+
+          <a
+            class="commission-button"
+            href="mailto:hello@doodloom.art?subject=Commission%20request%20via%20Doodloom"
+          >
+            Start commission email
+          </a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

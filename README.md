@@ -30,9 +30,9 @@ project-root/
 5. Add a new item:
 
 ```json
-{
-  "file": "images/my-new-artwork.jpg",
-  "title": "My New Artwork",
-  "caption": "Short description of the artwork."
-}
+ {
+    "file": "artwork-09.jpg",
+    "title": "ART WORK TITLE",
+    "caption": "ART WORK CAPTION"
+ }
 ```
